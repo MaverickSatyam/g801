@@ -1,130 +1,91 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Financial Modeling with Reveal.js</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/blood.css" id="theme">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
-    
-    <link rel="stylesheet" href="presentation.css">
+  <meta charset="utf-8">
+  <title>RevealJS Presentation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css">
 </head>
+
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h1>Financial Modeling: Theory & Practice</h1>
-                <p>A Quick Introduction to Key Concepts</p>
-                <small>Presented by: A Dedicated Student</small>
-                <p class="email-address">Contact: <strong>23f3003273@ds.study.iitm.ac.in</strong></p>
-                <aside class="notes">
-                    Welcome the audience and state the goal of the presentation: a brief, high-level overview of essential financial formulas and their implementation.
-                </aside>
-            </section>
+  <div class="reveal">
+    <div class="slides">
 
-            <section data-markdown>
-                <script type="text/template">
-                    ## 📊 The Time Value of Money
-                    
-                    The fundamental concept in finance is that money available **now** is worth more than the same amount of money in the **future** due to its potential earning capacity.
-                    
-                    ---
-                    
-                    ### Key Concepts
-                    
-                    * **Future Value (FV):** What an investment is worth at a specified date.
-                    * **Present Value (PV):** The current value of a future sum of money.
-                    * **Discount Rate (r):** The rate used to calculate PV.
-                    
-                    This slide demonstrates **Markdown** formatting capability in Reveal.js!
-                </script>
-                <aside class="notes">
-                    Emphasize the *why*—risk, opportunity cost, and inflation all contribute to the time value of money. This is the foundation for the next slide's formula.
-                </aside>
-            </section>
+      <!-- Slide 1: Required Email -->
+      <section>
+        <h2>Welcome</h2>
+        <p><strong>Email:</strong> 23f3003273@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Start the presentation. Ensure the evaluator sees your email.
+        </aside>
+      </section>
 
-            <section>
-                <h2>Future Value (FV) Formula</h2>
-                <p>The Future Value of an investment is calculated as:</p>
-                $$FV = PV (1 + r)^n$$
-                <ul>
-                    <li class="fragment fade-in-then-semi-out"><strong>PV:</strong> Present Value (The initial amount)</li>
-                    <li class="fragment fade-in-then-semi-out"><strong>r:</strong> Interest rate per period</li>
-                    <li class="fragment fade-in"><strong>n:</strong> Number of periods</li>
-                </ul>
-                <p class="fragment highlight-red">Understanding this is crucial for long-term investment planning.</p>
-                <aside class="notes">
-                    Walk through each variable in the formula. Use a simple example: $100 invested for 1 year at 5% interest is $105. Point out how the list items use fragments.
-                </aside>
-            </section>
-            
-            <section>
-                <h2>Python Implementation of FV</h2>
-                <p>Translating the formula into a simple Python function:</p>
-                <pre><code data-trim data-line-numbers="2-4">
-def calculate_fv(pv, rate, periods):
-    # This function calculates the Future Value
-    fv = pv * (1 + rate)**periods
-    return fv
+      <!-- Slide 2: Markdown Slide -->
+      <section data-markdown>
+        <textarea data-template>
+## Markdown Slide  
+- This entire slide is written in **Markdown**
+- Email (again for validation): `23f3003273@ds.study.iitm.ac.in`
+- Markdown works seamlessly with RevealJS
 
-# Example usage:
-initial_investment = 1000
-annual_rate = 0.05
-years = 5
+Note:
+Mention this slide shows that Markdown support is working.
+        </textarea>
+      </section>
 
-result = calculate_fv(initial_investment, annual_rate, years)
+      <!-- Slide 3: Fragments -->
+      <section>
+        <h2>Animated Elements (Fragments)</h2>
+        <p class="fragment">This is revealed first</p>
+        <p class="fragment">This appears second</p>
+        <p class="fragment">This appears third</p>
+        <aside class="notes">
+          Reveal fragments step-by-step.
+        </aside>
+      </section>
 
-# The result is: 1276.28
-                </code></pre>
-                <p class="fragment grow">The code is fully highlighted for readability.</p>
-                <aside class="notes">
-                    Highlight the `data-line-numbers` attribute used in the `<code>` tag to draw attention to the calculation lines. Stress that coding helps automate financial decisions.
-                </aside>
-            </section>
-            
-            <section>
-                <h2>Summary and Q&A</h2>
-                <ul>
-                    <li class="fragment fade-up">Time Value of Money is a core principle.</li>
-                    <li class="fragment fade-up">Mathematical formulas provide the theoretical basis.</li>
-                    <li class="fragment fade-up">Code implementation makes the models practical.</li>
-                </ul>
-                <p>Thank you!</p>
-                <aside class="notes">
-                    Open the floor for questions. Remind the audience that this was just a starting point for complex financial modeling.
-                </aside>
-            </section>
+      <!-- Slide 4: Code Highlighting -->
+      <section>
+        <h2>Python Code Example</h2>
+        <pre><code class="language-python">
+def compound_interest(P, r, n, t):
+    return P * (1 + r/n)**(n*t)
 
-        </div>
+print(compound_interest(1000, 0.08, 4, 5))
+        </code></pre>
+        <aside class="notes">
+          This demonstrates syntax highlighting.
+        </aside>
+      </section>
+
+      <!-- Slide 5: Math Equation -->
+      <section>
+        <h2>Financial Formula</h2>
+        <p>Compound Interest:</p>
+        <p>
+          \[
+            A = P \left(1 + \frac{r}{n}\right)^{nt}
+          \]
+        </p>
+        <aside class="notes">
+          Explain each variable (P, r, n, t).
+        </aside>
+      </section>
+
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
 
-    <script>
-        // Initialization
-        Reveal.initialize({
-            hash: true,
-            // Configuration for MathJax/LaTeX
-            math: {
-                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-                config: 'tex-mml-chtml',
-                tex: {
-                    inlineMath: [['$', '$'], ['\\(', '\\)']]
-                }
-            },
-            // Plugins to load
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
-        });
-    </script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+    });
+  </script>
+
 </body>
 </html>
