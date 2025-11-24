@@ -1,0 +1,12 @@
+/* Custom CSS for Presentation */
+
+.email-address {
+    margin-top: 50px;
+    font-size: 0.7em;
+    color: #aaaaaa; /* Lighter color for the footer text */
+}
+
+/* Ensure the math display is clear */
+.reveal .slides section .katex-display {
+    margin: 20px 0;
+}
